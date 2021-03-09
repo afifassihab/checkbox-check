@@ -1,0 +1,44 @@
+.round {
+  position: relative;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 10rem;
+  width: 10rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.round label::after {
+  border: 1rem solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 1.66667rem;
+  width: 3.33333rem;
+  position: absolute;
+  left: 2.93333rem;
+  top: 2.93333rem;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  opacity: 0;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.round input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+/*# sourceMappingURL=style copy.css.map */

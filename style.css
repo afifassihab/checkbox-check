@@ -1,0 +1,73 @@
+:root {
+  --length: 10rem;
+  --color: #66bb6a;
+}
+
+html,
+body {
+  margin: 0 auto;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.round {
+  width: var(--length);
+  height: var(--length);
+  position: relative;
+  margin: 6px;
+}
+
+.round label {
+  background-color: #fff;
+  border: 2px solid var(--color);
+  border-radius: 50%;
+  cursor: pointer;
+  height: var(--length);
+  width: var(--length);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.round label::after {
+  border: calc(var(--length) / 10) solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: calc(var(--length) / 6);
+  width: calc(var(--length) / 3);
+  position: absolute;
+  left: calc((var(--length) / 3) - (var(--length) * 0.04));
+  top: calc((var(--length) / 3) - (var(--length) * 0.04));
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  opacity: 0;
+}
+
+.round input[type="radio"] {
+  visibility: hidden;
+}
+
+.round input[type="radio"]:checked + label {
+  background-color: var(--color);
+  border-color: var(--color);
+}
+
+.round input[type="radio"]:checked + label::after {
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */

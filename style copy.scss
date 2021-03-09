@@ -1,0 +1,44 @@
+$length: 10rem;
+
+.round {
+	position: relative;
+
+	label {
+		background-color: #fff;
+		border: 1px solid #ccc;
+		border-radius: 50%;
+		cursor: pointer;
+		height: $length;
+		width: $length;
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		&::after {
+			border: ($length/10) solid #fff;
+			border-top: none;
+			border-right: none;
+			content: "";
+			height: ($length/6);
+			width: ($length/3);
+			position: absolute;
+			left: ($length / 3) - ($length * 0.04);
+			top: ($length / 3) - ($length * 0.04);
+			transform: rotate(-45deg);
+			opacity: 0;
+		}
+	}
+
+	input[type="checkbox"] {
+		visibility: hidden;
+
+		&:checked + label {
+			background-color: #66bb6a;
+			border-color: #66bb6a;
+		}
+
+		&:checked + label::after {
+			opacity: 1;
+		}
+	}
+}
